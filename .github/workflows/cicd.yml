@@ -1,0 +1,22 @@
+
+name: CI/CD
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: step 1
+        uses: actions/checkout@v4
+
+      - name: step 2
+        run: ls
+
+      - name: step 3
+        run: echo "Hello, job 1"
