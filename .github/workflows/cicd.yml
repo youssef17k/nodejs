@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: step 2
-        run: lss
+        run: ls
 
       - name: step 3
         run: echo "Hello, job 3"
