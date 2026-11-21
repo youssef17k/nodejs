@@ -20,3 +20,45 @@ jobs:
 
       - name: step 3
         run: echo "Hello, job 1"
+
+  job-2:
+    needs: [job-1]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: step 1
+        uses: actions/checkout@v4
+
+      - name: step 2
+        run: ls
+
+      - name: step 3
+        run: echo "Hello, job 2"
+
+  job-3:
+    needs: [job-1]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: step 1
+        uses: actions/checkout@v4
+
+      - name: step 2
+        run: ls
+
+      - name: step 3
+        run: echo "Hello, job 3"
+
+  job-4:
+    needs: [job-2, job-3]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: step 1
+        uses: actions/checkout@v4
+
+      - name: step 2
+        run: ls
+
+      - name: step 3
+        run: echo "Hello, job 4"
